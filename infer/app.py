@@ -10,6 +10,25 @@ import uvicorn
 import shutil
 import uuid
 from f5tts_wrapper import F5TTSWrapper
+import gdown
+
+model_dir = os.path.join(os.path.dirname(__file__), "model")
+
+os.makedirs(model_dir, exist_ok=True)
+
+model_path = os.path.join(model_dir, "model_612000.safetensors")
+
+# Google Drive file ID
+file_id = "1mHvjaZ3b3MPkaYZXUU9si6x_yWu4Jaw7"
+
+# Tải nếu chưa tồn tại
+if not os.path.exists(model_path):
+    print("🔽 Downloading model from Google Drive...")
+    url = f"https://drive.google.com/uc?id={file_id}"
+    gdown.download(url, model_path, quiet=False)
+    print("✅ Download complete.")
+else:
+    print("✅ Model already exists.")
 
 # Init FastAPI
 app = FastAPI()
