@@ -3,4 +3,6 @@ venv/
 infer/__pycache__
 infer/output
 infer/tmp
+infer/temp
 infer/model/model_612000.safetensors
+.gradio
