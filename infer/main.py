@@ -4,7 +4,7 @@ import uuid
 import shutil
 from f5tts_wrapper import F5TTSWrapper
 
-# Cấu hình môi trường
+# Cấu hình môi trường <3
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 os.environ["PYTHONUTF8"] = "1"
 
